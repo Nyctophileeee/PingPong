@@ -9,7 +9,7 @@ public class Ball : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        this.gameObject.GetComponent<Rigidbody2D>().velocity = new Vector2(3, 2 * speed);
+        this.gameObject.GetComponent<Rigidbody2D>().velocity = new Vector2(-3, 2 * speed);
     }
     void Update()
     {
