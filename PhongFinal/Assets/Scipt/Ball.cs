@@ -9,11 +9,18 @@ public class Ball : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        this.gameObject.GetComponent<Rigidbody2D>().velocity = new Vector2(-3, 2 * speed);
+        this.gameObject.GetComponent<Rigidbody2D>().velocity = new Vector2(RandomGenerator() * speed,  RandomGenerator() * speed);
     }
     void Update()
     {
         if (!PhotonNetwork.IsMasterClient) return;
     }
-    
+
+    public float RandomGenerator()
+    {
+        float random = Random.Range(0, 2) == 0 ? -1: 1;
+        return random;
+    }
+
+
 }

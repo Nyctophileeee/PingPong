@@ -13,6 +13,7 @@ public class Lobby : MonoBehaviourPunCallbacks
     public TMP_InputField joinRoomTxt;
     public override void OnJoinedRoom()
     {
+        Spawner.isPlayer1Exist = true;
         PhotonNetwork.LoadLevel(2);
     }
     public void CreateRoom()

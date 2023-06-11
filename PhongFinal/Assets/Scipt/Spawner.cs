@@ -7,21 +7,23 @@ public class Spawner : MonoBehaviour
 {
     public GameObject paddle;
     public static bool isPlayer1Exist = false;
-    // Start is called before the first frame update
+
     void Start()
     {
         if (isPlayer1Exist == false)
         {
-            PhotonNetwork.Instantiate(paddle.name, new Vector3(-8, 0, 0), Quaternion.identity);
+            Vector3 spawnPosition = new Vector3(8, 0, 0);
+            PhotonNetwork.Instantiate(paddle.name, spawnPosition, Quaternion.identity);
         }
         else
         {
-            PhotonNetwork.Instantiate(paddle.name, new Vector3(8, 0, 0), Quaternion.identity);
+            Vector3 spawnPosition = new Vector3(-8, 0, 0);
+            if (PhotonNetwork.LocalPlayer.ActorNumber == 2)
+            {
+                spawnPosition.x *= -1;
+            }
+            PhotonNetwork.Instantiate(paddle.name, spawnPosition, Quaternion.identity);
         }
-    }
-    // Update is called once per frame
-    void Update()
-    {
         
     }
 }
