@@ -3,7 +3,6 @@ using System.Collections.Generic;
 using UnityEngine;
 using Photon.Pun;
 using UnityEngine.SceneManagement;
-using JetBrains.Annotations;
 
 public class ConToServer: MonoBehaviourPunCallbacks
 {
@@ -16,7 +15,6 @@ public class ConToServer: MonoBehaviourPunCallbacks
     {
         PhotonNetwork.JoinLobby();
     }
-
     public override void OnJoinedLobby()
     {
         SceneManager.LoadScene(1);

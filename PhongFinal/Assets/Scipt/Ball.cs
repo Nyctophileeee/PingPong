@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Photon.Pun;
 
 public class Ball : MonoBehaviour
 {
@@ -9,5 +10,9 @@ public class Ball : MonoBehaviour
     void Start()
     {
         this.gameObject.GetComponent<Rigidbody2D>().velocity = new Vector2(3, 2 * speed);
+    }
+    void Update()
+    {
+        if (!PhotonNetwork.IsMasterClient) return;
     }
 }

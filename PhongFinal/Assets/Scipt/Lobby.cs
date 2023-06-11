@@ -17,7 +17,7 @@ public class Lobby : MonoBehaviourPunCallbacks
     {
         PhotonNetwork.CreateRoom(createRoomTxt.text);
     }
-    public void JoinedRoom()
+    public void JoinRoom()
     {
         PhotonNetwork.JoinRoom(joinRoomTxt.text);
     }
