@@ -2,18 +2,19 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using Photon.Pun;
+using Photon.Realtime;
 
-public class Ball : MonoBehaviour
+public class Waiting : MonoBehaviourPunCallbacks
 {
-    public float speed = 5;
     // Start is called before the first frame update
     void Start()
     {
-        this.gameObject.GetComponent<Rigidbody2D>().velocity = new Vector2(-3, 2 * speed);
+        
     }
+
+    // Update is called once per frame
     void Update()
     {
-        if (!PhotonNetwork.IsMasterClient) return;
+       
     }
-    
 }

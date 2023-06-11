@@ -2,8 +2,10 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using Photon.Pun;
+using Photon.Realtime;
 using TMPro;
 using UnityEngine.SceneManagement;
+using Unity.VisualScripting;
 
 public class Lobby : MonoBehaviourPunCallbacks
 {
@@ -11,7 +13,7 @@ public class Lobby : MonoBehaviourPunCallbacks
     public TMP_InputField joinRoomTxt;
     public override void OnJoinedRoom()
     {
-        SceneManager.LoadScene(2);
+        PhotonNetwork.LoadLevel(2);
     }
     public void CreateRoom()
     {

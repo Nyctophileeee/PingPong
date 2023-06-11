@@ -10,13 +10,13 @@ public class Spawner : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        if(isPlayer1Exist == false)
+        if (isPlayer1Exist == false)
         {
             PhotonNetwork.Instantiate(paddle.name, new Vector3(-8, 0, 0), Quaternion.identity);
-        } else
+        }
+        else
         {
-        PhotonNetwork.Instantiate(paddle.name, new Vector3(8, 0, 0), Quaternion.identity);
-
+            PhotonNetwork.Instantiate(paddle.name, new Vector3(8, 0, 0), Quaternion.identity);
         }
     }
     // Update is called once per frame
