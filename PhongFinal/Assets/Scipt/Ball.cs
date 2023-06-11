@@ -10,10 +10,4 @@ public class Ball : MonoBehaviour
     {
         this.gameObject.GetComponent<Rigidbody2D>().velocity = new Vector2(3, 2 * speed);
     }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
 }
